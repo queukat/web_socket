@@ -26,15 +26,21 @@ Installed SBT (Scala Build Tool)
 ### Installation
 Clone the repository:
 
-```bash git clone https://github.com/yourusername/WebSocketOrderedMessages.git```
+```bash 
+git clone https://github.com/yourusername/WebSocketOrderedMessages.git
+```
 
 Navigate to the project directory:
 
-```bash cd WebSocketOrderedMessages```
+```bash 
+cd WebSocketOrderedMessages
+```
 
 Run the application using SBT:
 
-```bash sbt run```
+```bash 
+sbt run
+```
 
 ## Usage
 Once started, the application will automatically connect to the servers and initiate the process of receiving and forwarding messages.
