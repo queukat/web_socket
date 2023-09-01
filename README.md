@@ -6,6 +6,19 @@ WebSocketOrderedMessages is a Scala application designed to process and forward 
 * **Priority Queue:** Uses a priority queue to handle the ordering of incoming messages.
 * **Sequential Forwarding:** Ensures messages forwarded to the ordered server are in the correct sequence.
 * **Delay Measurement:** Records the minimum delay between receiving a message from the raw server and sending it to the ordered server.
+
+## Design Choices
+Throughout the development of **'WebSocketOrderedMessages'**, several design decisions were made to ensure efficient message processing and forwarding. Here's a breakdown of these choices:
+
+1. **Priority Queue for Message Ordering:**\
+Given that messages from the raw server can arrive out of order, a priority queue was chosen to efficiently order the messages based on their unique IDs. Messages with higher IDs are given higher priority, allowing us to easily retrieve the next expected message. This ensures that the messages are forwarded to the ordered server in the correct sequence without excessive sorting operations.
+
+2. **Buffering Strategy:**\
+Instead of immediately processing each incoming message, the application employs a buffering strategy. If the next expected message hasn't been received yet, the application buffers up incoming messages. This approach is particularly beneficial in scenarios where the expected message is slightly delayed, as it can be quickly processed once it arrives. This strategy reduces the number of operations and improves the overall efficiency of the message forwarding process.
+
+3. **Logging with 'log4j':**\
+Transparency and debuggability are crucial for any application. By integrating **'log4j'**, the application provides detailed logs of significant events, such as connections, message receptions, and forwardings. This choice not only aids in monitoring the application's performance but also facilitates troubleshooting.
+
 ## How It Works
 1. **Initialization:** On startup, the application establishes connections to both the raw and ordered WebSocket servers.
 
