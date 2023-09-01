@@ -27,7 +27,7 @@ Installed SBT (Scala Build Tool)
 Clone the repository:
 
 ```bash 
-git clone https://github.com/yourusername/WebSocketOrderedMessages.git
+git clone https://github.com/queukat/test_case.git
 ```
 
 Navigate to the project directory:
