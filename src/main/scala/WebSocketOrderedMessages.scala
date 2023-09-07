@@ -86,7 +86,8 @@ object WebSocketOrderedMessages extends App {
           logger.error(s"Invalid JSON received: $message")
           return
         }
-        val count = receivedMessagesCounter += 1
+        receivedMessagesCounter += 1
+        val count = receivedMessagesCounter
         if (count > 1000) {
           logger.info("Received 1000 messages. Closing connection.")
           closeConnection()
@@ -116,8 +117,8 @@ object WebSocketOrderedMessages extends App {
             sendOrderedMessages()
           }
           val delay = System.nanoTime() - receivedTime
-          if (delay < minDelay.get()) {
-            minDelay.set(delay)
+          if (delay < minDelay) {
+            minDelay = delay
             logger.info(s"New minimum delay recorded: $delay nanoseconds")
           }
           logger.info(s"Received from raw server: $message,#${count}")
@@ -247,4 +248,3 @@ object WebSocketOrderedMessages extends App {
     }
   }
 }
-
