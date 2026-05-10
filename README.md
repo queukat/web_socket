@@ -1,4 +1,8 @@
 # WebSocketOrderedMessages
+
+<!-- public-repo-status -->
+> Status: Legacy experiment. This repository is kept public for reference, but it is not actively supported. Issues and pull requests are disabled unless support is reopened.
+
 WebSocketOrderedMessages is a Scala application designed to process and forward messages from a raw WebSocket server to an ordered WebSocket server. Messages received from the raw server might be unordered, but this application ensures they are sent to the ordered server in a sequential manner based on their unique ID.
 
 ## Features
