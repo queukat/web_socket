@@ -67,4 +67,9 @@ The application utilizes **'log4j'** for logging purposes. Logging configuration
 
 ## Contributing
 If you'd like to contribute to this project, please fork the repository and submit a pull request.
+## License
 
+<!-- commercial-license-policy -->
+This project is licensed for non-commercial use under the [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0/).
+Commercial use, resale, paid distribution, marketplace publication, SaaS hosting, or bundling into a paid product requires separate written permission from the author.
+Project names, logos, package identifiers, store listings, screenshots, and other branding assets are not licensed for use in forks or redistributed builds.
